@@ -1,14 +1,14 @@
 import express from 'express';
-import router from './routes.js';
-import 'dotenv/config';
+import router from './src/routes.js';
 import bodyParser from 'body-parser';
-import { errorHandler } from './errors.js';
+import { errorHandler } from './src/config/errors.js';
+import 'dotenv/config';
 
 const app = express();
 
 app.use(express.json());
-// app.use(bodyParser.json());
-// app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get("/", (_request, response) => {
   response.json({

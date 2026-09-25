@@ -76,7 +76,7 @@ export class ShopifyClient {
     if (!response.ok || payload.errors) {
       throw new AppError(
         "Shopify GraphQL request failed",
-        response.status,
+        400,
         payload
       );
     }

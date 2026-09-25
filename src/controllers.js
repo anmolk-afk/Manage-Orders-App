@@ -1,5 +1,5 @@
-import { ORDERS_QUERY, ORDER_BY_ID_QUERY, UPDATE_ORDER_QUERY } from './graphql.js';
-import { ShopifyClient } from './shopify.js';
+import { ORDERS_QUERY, ORDER_BY_ID_QUERY, UPDATE_ORDER_QUERY } from './config/graphql.js';
+import { ShopifyClient } from './config/shopify.js';
 import 'dotenv/config';
 
 const shopifyClient = new ShopifyClient({
@@ -11,8 +11,10 @@ const shopifyClient = new ShopifyClient({
 
 export const getOrders = async (req, res, next) => {
   try {
-    const query = req.query || {};
-    const data = await shopifyClient.graphql(ORDERS_QUERY, { first: Number(query.take) || 10, after: query.cursor });
+    const first = Number(req.query?.take) || 10;
+    const after = req.query?.cursor;
+
+    const data = await shopifyClient.graphql(ORDERS_QUERY, { first, after });
     return res.status(200).json({ orders: data.orders.edges, pageInfo: data.orders.pageInfo });
   }
   catch (e) {
