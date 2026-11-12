@@ -54,5 +54,3 @@ await test_update_order(7287688069370, {
   "value": "processed",
   "type": "single_line_text_field"
 });
-
-
