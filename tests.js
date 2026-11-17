@@ -1,7 +1,5 @@
 const BASE_URL = "http://localhost:3000"
 
-// test commit
-
 const test_get_orders = async (take, cursor) => {
   const queryObj = {}
   if (take) queryObj.take = take;
