@@ -5,6 +5,8 @@ import { errorHandler } from './src/config/errors.js';
 import 'dotenv/config';
 
 const app = express();
+// this is test commit for PR
+// return sample response for checking results
 
 app.use(express.json());
 app.use(bodyParser.json());
