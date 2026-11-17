@@ -5,8 +5,6 @@ import { errorHandler } from './src/config/errors.js';
 import 'dotenv/config';
 
 const app = express();
-// this is test commit for PR
-// return sample response for checking results
 
 app.use(express.json());
 app.use(bodyParser.json());
@@ -20,6 +18,10 @@ app.get("/", (_request, response) => {
       orders: "/orders",
     },
   });
+});
+
+app.get("/health", (req,res)=>{
+  return res.json({"message": "everything ok!"});
 });
 
 app.use(router);
