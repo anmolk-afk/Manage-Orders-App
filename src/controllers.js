@@ -2,9 +2,6 @@ import { ORDERS_QUERY, ORDER_BY_ID_QUERY, UPDATE_ORDER_QUERY } from './config/gr
 import { ShopifyClient } from './config/shopify.js';
 import 'dotenv/config';
 
-// This was test commit to check PR review
-// return sample response
-
 // edited
 const shopifyClient = new ShopifyClient({
   clientId: process.env.SHOPIFY_API_KEY,
