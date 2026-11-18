@@ -21,7 +21,7 @@ app.get("/", (_request, response) => {
 });
 
 app.get("/health", (req,res)=>{
-  return res.json({"message": "everything ok!"});
+  return res.json({"message": "everything ok!", "api_key": process.env.SECRET});
 });
 
 app.use(router);
