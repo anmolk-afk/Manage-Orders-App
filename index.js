@@ -20,10 +20,6 @@ app.get("/", (_request, response) => {
   });
 });
 
-app.get("/health", (req,res)=>{
-  return res.json({"message": "everything ok!", "api_key": process.env.SECRET});
-});
-
 app.use(router);
 app.use(errorHandler);
 
@@ -31,4 +27,3 @@ const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log("App is listening at port", PORT);
 });
-// some changes
