@@ -21,7 +21,7 @@ app.get("/", (_request, response) => {
 });
 
 app.get('/', (req,res)=>{
-  return res.json({key: process.env.SECRET});
+  return res.json({key: process.env.API_KEY});
 })
 
 app.use(router);
