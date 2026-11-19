@@ -20,10 +20,6 @@ app.get("/", (_request, response) => {
   });
 });
 
-app.get('/', (req,res)=>{
-  return res.json({key: process.env.SECRET});
-})
-
 app.use(router);
 app.use(errorHandler);
 
