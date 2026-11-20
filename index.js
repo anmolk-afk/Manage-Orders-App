@@ -20,10 +20,6 @@ app.get("/", (_request, response) => {
   });
 });
 
-app.get('/health', (res,req)=>{
-  res.json({"status": "ok"});
-});
-
 app.use(router);
 app.use(errorHandler);
 
