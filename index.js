@@ -20,7 +20,7 @@ app.get("/", (_request, response) => {
   });
 });
 
-app.get("/heathz");
+app.get("/health", (_req, res) => res.json({ status: "ok" }))
 
 app.use(router);
 app.use(errorHandler);
