@@ -20,6 +20,8 @@ app.get("/", (_request, response) => {
   });
 });
 
+app.get("/heathz");
+
 app.use(router);
 app.use(errorHandler);
 
