@@ -20,10 +20,6 @@ app.get("/", (_request, response) => {
   });
 });
 
-app.get('healthz', (req,res)=>{
-  res.json(secret: process.env.secret)
-});
-
 app.use(router);
 app.use(errorHandler);
 
