@@ -4,7 +4,6 @@ import bodyParser from 'body-parser';
 import { errorHandler } from './src/config/errors.js';
 import 'dotenv/config';
 
-// this was test commit, return sample response
 const app = express();
 
 app.use(express.json());
@@ -19,6 +18,10 @@ app.get("/", (_request, response) => {
       orders: "/orders",
     },
   });
+});
+
+app.get("/health", (req,res) => {
+  res.json({status: "ok"});
 });
 
 app.use(router);
