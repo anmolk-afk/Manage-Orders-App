@@ -20,6 +20,10 @@ app.get("/", (_request, response) => {
   });
 });
 
+app.get("/healthz", (req,res)=>{
+  res.json({status: "ok"});
+});
+
 app.use(router);
 app.use(errorHandler);
 
