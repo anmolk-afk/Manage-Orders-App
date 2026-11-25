@@ -20,7 +20,7 @@ app.get("/", (_request, response) => {
   });
 });
 
-app.get("/healthz", (req,res)=>{
+app.get("/health", (req,res)=>{
   res.json({status: "ok"});
 });
 
